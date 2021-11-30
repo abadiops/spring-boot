@@ -103,6 +103,16 @@ public class Pedido implements Serializable {
 	public void setPagamento(Pagamento pagamento) {
 		this.pagamento = pagamento;
 	}
+	
+	public Double getTotal() {
+		
+	  double sum = 0.0;
+		
+	  for (PedidoItem x : items) {
+			sum += x.getSubTotal();
+	  }
+	 return sum;
+	}
 
 	@Override
 	public String toString() {
